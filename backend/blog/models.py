@@ -21,7 +21,7 @@ class Post(models.Model):
     )
     
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
-    category = models.ForeignKey(Category, on_delete=models.PROTECT)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
     title = models.CharField(max_length=250)
     excerpt = models.TextField(null=True)
     content = models.TextField()
